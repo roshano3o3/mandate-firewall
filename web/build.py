@@ -20,4 +20,7 @@ payload = json.dumps(data).replace("</", "<\\/")
 html = (ROOT / "template.html").read_text()
 html = html.replace("__SHA256__", (ROOT / "sha256.js").read_text()).replace("__DATA__", payload)
 (ROOT / "index.html").write_text(html)
-print(f"Wrote {ROOT / 'index.html'} ({len(html):,} bytes)")
+docs = ROOT.parent / "docs"
+docs.mkdir(exist_ok=True)
+(docs / "index.html").write_text(html)  # served by GitHub Pages
+print(f"Wrote web/index.html and docs/index.html ({len(html):,} bytes)")

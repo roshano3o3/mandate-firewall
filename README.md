@@ -2,6 +2,8 @@
 
 **When the model is wrong, the mandate still holds.**
 
+**Live demo:** https://roshano3o3.github.io/mandate-firewall/
+
 A small, working prototype of a governed AI investment loop. The AI only *proposes* an action. A separate rule engine with no AI in it decides whether that proposal may act, and every decision is written to a tamper-evident log that anyone can replay.
 
 ```
@@ -76,7 +78,8 @@ mandate_firewall/
   proposer.py   Claude-backed proposer (optional)
   scenarios.py  demo data and "model is wrong" cases
   demo.py       runs the full story
-web/            static demo page with in-browser verification
+web/            demo page template and build script
+docs/           built demo page (served by GitHub Pages)
 tests/
 ```
 
